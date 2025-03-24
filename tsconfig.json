@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "jsx": "react-jsx",
+    "strict": false, // TODO Make this work.
+    "skipLibCheck": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "strictNullChecks": false, // TODO Make this work.
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": ["src/**/*", "src/index.ts", "src/Style/**/*.css", "../interface/hooks/usePrompt.ts", "../interface/hooks/useProvider.ts", "../interface/hooks/z.ts", "../interface/hooks/useChain.ts", "../interface/hooks/useAgent.ts", "../interface/hooks/useCommand.ts", "../interface/Selectors/AgentSelector.tsx", "../interface/Selectors/PromptSelector.tsx", "../interface/Selectors/CommandSelector.tsx", "../interface/Selectors/ChainSelector.tsx"],
+  "exclude": ["node_modules", "dist", "src/**/*.stories.*"]
+}
