@@ -4,9 +4,9 @@ import useSWR, { SWRResponse } from 'swr';
 import log from '@/next-log/log';
 import '@/zod2gql/zod2gql';
 
+import { convertTimestampsToLocal } from '../lib/timezone';
 import { createGraphQLClient } from './lib';
 import { Conversation, ConversationSchema, Message } from './z';
-import { convertTimestampsToLocal } from '../lib/timezone';
 
 // ============================================================================
 // Conversation Related Hooks
@@ -23,7 +23,6 @@ export function useConversation(conversationId: string): SWRResponse<Conversatio
   return useSWR<Conversation | null>(
     [`/conversation`, conversationId],
     async (): Promise<Conversation | null> => {
-      console.log('useConversation() ID: ', conversationId);
       if (!conversationId || conversationId === '-') return null;
       try {
         const query = ConversationSchema.toGQL('query', 'conversation', { conversationId });
