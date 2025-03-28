@@ -3,6 +3,7 @@ import AppWrapper from '@/appwrapper/AppWrapper';
 import Gravatar from '@/auth/management/Gravatar';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
+import Chat from '@/interactive/components/Chat/Chat';
 import log from '@/next-log/log';
 import axios from 'axios';
 import { getCookie, setCookie } from 'cookies-next';
@@ -12,11 +13,10 @@ import { LuMenu as Menu } from 'react-icons/lu';
 import useSWR from 'swr';
 import { AgentSelector } from '../../interface/Selectors/AgentSelector';
 import PromptSelector from '../../interface/Selectors/PromptSelector';
-import Chat from './Chat/Chat';
+import Form from './components/Form/Form';
+import ConversationSelector from './components/Selectors/ConversationSelector';
 import ContextWrapper from './ContextWrapper';
-import Form from './Form/Form';
 import { InteractiveConfig, InteractiveConfigDefault, Overrides } from './InteractiveConfigContext';
-import ConversationSelector from './Selectors/ConversationSelector';
 
 export type FormProps = {
   fieldOverrides?: { [key: string]: ReactNode };
