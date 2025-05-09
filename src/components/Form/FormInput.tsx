@@ -9,7 +9,7 @@ export default function FormInput({
   disabled,
 }: {
   argValues: Record<string, string>;
-  setArgValues: (argValues: Record<string, string> | ((previous: Record<string, string>) => Record<string, string>)) => void;
+  setArgValues: React.Dispatch<React.SetStateAction<{ text_FirstName: string; text_LastName: string; text_Email: string }>>;
   disabled: boolean;
 }): ReactNode {
   return (
